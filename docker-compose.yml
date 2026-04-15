@@ -1,0 +1,9 @@
+services:
+  macos-desktop:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: macos-desktop
+    ports:
+      - "8081:8081"
+    restart: unless-stopped

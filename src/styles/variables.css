@@ -1,0 +1,55 @@
+/**
+ * macOS Desktop - CSS Variables
+ * macOS 风格颜色变量定义
+ * Requirements: 1.5, 2.5
+ */
+
+:root {
+  /* Menu Bar */
+  --menu-bar-bg: rgba(255, 255, 255, 0.8);
+  --menu-bar-height: 24px;
+  
+  /* Dock */
+  --dock-bg: rgba(255, 255, 255, 0.3);
+  --dock-border: rgba(255, 255, 255, 0.5);
+  
+  /* Window */
+  --window-bg: #ffffff;
+  --window-title-bar: #f6f6f6;
+  --window-border: rgba(0, 0, 0, 0.1);
+  --window-shadow: 0 22px 70px 4px rgba(0, 0, 0, 0.56);
+  --window-border-radius: 10px;
+  
+  /* Traffic Light Buttons */
+  --traffic-red: #ff5f57;
+  --traffic-yellow: #febc2e;
+  --traffic-green: #28c840;
+  --traffic-red-hover: #ff3b30;
+  --traffic-yellow-hover: #ffcc00;
+  --traffic-green-hover: #00c853;
+  
+  /* Selection & Interaction */
+  --icon-selected: rgba(0, 122, 255, 0.3);
+  --icon-hover: rgba(0, 122, 255, 0.1);
+  --focus-ring: rgba(0, 122, 255, 0.5);
+  
+  /* Text Colors */
+  --text-primary: #1d1d1f;
+  --text-secondary: #86868b;
+  --text-light: #ffffff;
+  
+  /* System Colors */
+  --system-blue: #007aff;
+  --system-gray: #8e8e93;
+  --system-gray-light: #f5f5f7;
+  
+  /* Z-Index Layers */
+  --z-desktop: 1;
+  --z-dock: 50;
+  --z-window-base: 100;
+  --z-menu-bar: 9999;
+  
+  /* Blur Values */
+  --blur-amount: 20px;
+  --blur-amount-light: 10px;
+}
