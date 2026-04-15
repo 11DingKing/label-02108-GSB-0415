@@ -15,6 +15,7 @@ import type { AppDefinition } from '../types';
 import FinderApp from '../apps/FinderApp.vue';
 import SettingsApp from '../apps/SettingsApp.vue';
 import NotesApp from '../apps/NotesApp.vue';
+import TerminalApp from '../apps/TerminalApp.vue';
 
 /**
  * App store state
@@ -53,6 +54,14 @@ const sampleApps: AppDefinition[] = [
     defaultWidth: 800,
     defaultHeight: 500,
     component: markRaw(NotesApp),
+  },
+  {
+    id: 'terminal',
+    name: 'Terminal',
+    icon: '/icons/terminal.svg',
+    defaultWidth: 700,
+    defaultHeight: 450,
+    component: markRaw(TerminalApp),
   },
 ];
 
