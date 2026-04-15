@@ -1,20 +1,21 @@
 /**
  * Application State Management Store
- * 
+ *
  * Manages application definitions and running state tracking.
  * Provides the registry of available applications and tracks which
  * applications are currently running (have open windows).
- * 
+ *
  * Requirements satisfied:
  * - 6.1: Include at least 3 sample applications (Finder, Settings, Notes)
  * - 6.3: Sample applications shall have distinct icons and titles
  */
 
-import { reactive, computed, markRaw, type Component } from 'vue';
-import type { AppDefinition } from '../types';
-import FinderApp from '../apps/FinderApp.vue';
-import SettingsApp from '../apps/SettingsApp.vue';
-import NotesApp from '../apps/NotesApp.vue';
+import { reactive, computed, markRaw, type Component } from "vue";
+import type { AppDefinition } from "../types";
+import FinderApp from "../apps/FinderApp.vue";
+import SettingsApp from "../apps/SettingsApp.vue";
+import NotesApp from "../apps/NotesApp.vue";
+import TerminalApp from "../apps/TerminalApp.vue";
 
 /**
  * App store state
@@ -31,28 +32,36 @@ interface AppStoreState {
  */
 const sampleApps: AppDefinition[] = [
   {
-    id: 'finder',
-    name: 'Finder',
-    icon: '/icons/finder.svg',
+    id: "finder",
+    name: "Finder",
+    icon: "/icons/finder.svg",
     defaultWidth: 800,
     defaultHeight: 500,
     component: markRaw(FinderApp),
   },
   {
-    id: 'settings',
-    name: 'System Preferences',
-    icon: '/icons/settings.svg',
+    id: "settings",
+    name: "System Preferences",
+    icon: "/icons/settings.svg",
     defaultWidth: 700,
     defaultHeight: 450,
     component: markRaw(SettingsApp),
   },
   {
-    id: 'notes',
-    name: 'Notes',
-    icon: '/icons/notes.svg',
+    id: "notes",
+    name: "Notes",
+    icon: "/icons/notes.svg",
     defaultWidth: 800,
     defaultHeight: 500,
     component: markRaw(NotesApp),
+  },
+  {
+    id: "terminal",
+    name: "Terminal",
+    icon: "/icons/terminal.svg",
+    defaultWidth: 700,
+    defaultHeight: 450,
+    component: markRaw(TerminalApp),
   },
 ];
 
@@ -62,7 +71,7 @@ const sampleApps: AppDefinition[] = [
 function createAppStore() {
   // Initialize apps map with sample applications
   const appsMap = new Map<string, AppDefinition>();
-  sampleApps.forEach(app => {
+  sampleApps.forEach((app) => {
     appsMap.set(app.id, app);
   });
 
@@ -148,12 +157,12 @@ function createAppStore() {
   return {
     // State (reactive)
     state,
-    
+
     // Computed
     appCount,
     runningAppCount,
     allApps,
-    
+
     // Actions
     getApp,
     isAppRunning,
