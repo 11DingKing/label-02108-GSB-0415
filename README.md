@@ -16,6 +16,7 @@ docker-compose logs -f
 ```
 
 验证跨平台镜像（ARM64）：
+
 ```bash
 docker pull --platform linux/arm64 nginx:1.25-alpine
 docker pull --platform linux/arm64 node:20-alpine
@@ -23,8 +24,8 @@ docker pull --platform linux/arm64 node:20-alpine
 
 ## Services
 
-| 服务名称 | 端口 | 描述 |
-|---------|------|------|
+| 服务名称      | 端口 | 描述                  |
+| ------------- | ---- | --------------------- |
 | macos-desktop | 8081 | 仿 macOS 桌面前端应用 |
 
 访问地址：http://localhost:8081
